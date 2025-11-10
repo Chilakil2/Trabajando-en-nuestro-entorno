@@ -1,2 +1,116 @@
 # Trabajando-en-nuestro-entorno
 Proyecto academico UdeC Bach. 18, 5°B, Equipo 3 Feb-Nov
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GESTIÓN 9-05-2025 | Conservación Ambiental</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #111827;
+    }
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, #065f46, #10b981);
+      color: white;
+      padding: 80px 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #065f46;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
+    footer {
+      background: #065f46;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #a7f3d0;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      section { padding: 40px 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Proyecto Completado • 2023-2024</p>
+    <h1>Conservación Ambiental<br>en Nuestra Comunidad</h1>
+    <p>Un proyecto exitoso que transformó nuestro entorno local</p>
+  </header>
+
+  <section>
+    <h2>Contexto y Motivación</h2>
+    <p class="subtitle">Cómo surgió nuestra iniciativa</p>
+    <div class="card">
+      <p>Este proyecto surgió ante la necesidad urgente de abordar la degradación ambiental en el Bachillerato No. 18 y su comunidad. A través de investigación, trabajo colaborativo y educación ambiental, buscamos generar conciencia y soluciones sostenibles.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objetivos del Proyecto</h2>
+    <p class="subtitle">Metas específicas</p>
+    <div class="card">
+      <ul>
+        <li>Reducir la contaminación del suelo y del agua en nuestra comunidad.</li>
+        <li>Fomentar la educación ambiental entre los estudiantes y vecinos.</li>
+        <li>Implementar acciones prácticas como jornadas de limpieza y reciclaje.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Resultados Alcanzados</h2>
+    <p class="subtitle">Impacto medible</p>
+    <div class="card">
+      <ul>
+        <li>Recolección de más de 120 kg de residuos en áreas afectadas.</li>
+        <li>Participación activa de más de 80 estudiantes y docentes.</li>
+        <li>Mayor conciencia ecológica reflejada en encuestas comunitarias.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Proyecto <strong>GESTIÓN 9-05-2025</strong> — Bachillerato No. 18</p>
+    <p>Desarrollado por el equipo ambiental con el liderazgo de Ángel E.</p>
+  </footer>
+</body>
+</html>
+
+al crearlo use este
