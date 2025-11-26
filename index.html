@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Trabajando en nuestro entorno | Conservación Ambiental</title>
+  <title>GESTIÓN 9-05-2025 | Conservación Ambiental</title>
   
   <link rel="icon" href="favicon.png" type="image/png">
 
@@ -15,7 +15,7 @@
       padding: 0;
       background: #f9fafb;
       color: #111827;
-      scroll-behavior: smooth; /* Esto hace que baje suavemente */
+      scroll-behavior: smooth;
     }
     header {
       text-align: center;
@@ -48,27 +48,19 @@
       margin-bottom: 40px;
     }
     
-    /* Estilo para tarjetas normales (Contexto y Resultados) */
     .card {
       background: white;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin-bottom: 25px;
-      /* Necesario para la animación de brillos */
       position: relative;
-      border: 2px solid transparent; /* Borde invisible inicial */
+      border: 2px solid transparent;
       transition: all 0.3s ease;
     }
 
-    /* --- NUEVOS ESTILOS: LEER MÁS Y BRILLITOS --- */
-
-    /* Clase para ocultar el contenido extra */
-    .hidden-content {
-        display: none;
-    }
-
-    /* Estilo del botón "Leer más" */
+    /* --- ESTILOS LEER MÁS Y BRILLITOS --- */
+    .hidden-content { display: none; }
     .read-more-btn {
         background: none;
         border: none;
@@ -81,102 +73,95 @@
         align-items: center;
         transition: color 0.3s ease;
     }
-    .read-more-btn:hover {
-        color: #59ef84;
-    }
-    .read-more-btn i {
-        margin-left: 5px;
-        transition: transform 0.3s ease;
-    }
-    /* Rotar la flechita cuando está abierto */
-    .read-more-btn.open i {
-        transform: rotate(180deg);
-    }
+    .read-more-btn:hover { color: #59ef84; }
+    .read-more-btn i { margin-left: 5px; transition: transform 0.3s ease; }
+    .read-more-btn.open i { transform: rotate(180deg); }
 
-    /* Animación de "Brillitos" (Sparkles) */
     @keyframes sparkle-animation {
-        0% {
-            box-shadow: 0 0 5px gold, 0 0 10px #59ef84;
-            border-color: gold;
-        }
-        50% {
-            box-shadow: 0 0 20px gold, 0 0 30px #59ef84, 0 0 40px #1057b0;
-            border-color: #59ef84;
-        }
-        100% {
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-color: transparent;
-        }
+        0% { box-shadow: 0 0 5px gold, 0 0 10px #59ef84; border-color: gold; }
+        50% { box-shadow: 0 0 20px gold, 0 0 30px #59ef84, 0 0 40px #1057b0; border-color: #59ef84; }
+        100% { box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-color: transparent; }
     }
+    .sparkle-effect { animation: sparkle-animation 1.5s ease-in-out; }
 
-    /* Clase que activa la animación */
-    .sparkle-effect {
-        animation: sparkle-animation 1.5s ease-in-out;
-    }
-
-
-    /* --- ESTILOS NUEVOS: TARJETAS DE OBJETIVOS (VISUALES) --- */
+    /* --- ESTILOS OBJETIVOS --- */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
     .feature-card {
-      background: #f0fdf4; /* Fondo verde muy clarito */
-      border: 1px solid #bbf7d0; /* Borde verde suave */
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
       border-radius: 12px;
       padding: 25px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .feature-card:hover {
-      transform: translateY(-5px); /* Se levanta al pasar el mouse */
+      transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      background: #dcfce7; /* Se oscurece un poquito al tocar */
+      background: #dcfce7;
     }
-    .feature-icon {
-      font-size: 3.5rem; /* Tamaño del emoji */
-      margin-bottom: 15px;
-      display: block;
-    }
-    .feature-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #166534; /* Texto verde oscuro */
-      margin-bottom: 10px;
-      display: block;
-    }
-    .feature-desc {
-      font-size: 0.95rem;
-      color: #4b5563;
-      line-height: 1.5;
-    }
+    .feature-icon { font-size: 3.5rem; margin-bottom: 15px; display: block; }
+    .feature-title { font-size: 1.2rem; font-weight: bold; color: #166534; margin-bottom: 10px; display: block; }
+    .feature-desc { font-size: 0.95rem; color: #4b5563; line-height: 1.5; }
 
-    /* --- ESTILOS DE LA GALERÍA --- */
+    /* --- ESTILOS GALERÍA --- */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
       padding: 10px;
     }
-
     .gallery-item {
       overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       background: #fff;
     }
-
     .gallery-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
+      width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.3s ease;
     }
+    .gallery-item img:hover { transform: scale(1.05); }
 
-    .gallery-item img:hover {
-      transform: scale(1.05);
+    /* --- ESTILOS COLABORADORES (TIPO CREDENCIAL) --- */
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    .team-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden; /* Para que la imagen no se salga */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .team-card:hover {
+        transform: translateY(-5px);
+    }
+    .team-img {
+        width: 100%;
+        height: 220px; /* Altura de la foto */
+        object-fit: cover;
+        background-color: #e5e7eb; /* Color de fondo si no hay foto */
+    }
+    .team-info {
+        padding: 15px;
+    }
+    .team-name {
+        font-weight: bold;
+        color: #111827;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .team-role {
+        color: #065f46;
+        font-size: 0.95rem;
     }
 
     footer {
@@ -185,10 +170,7 @@
       text-align: center;
       padding: 20px;
     }
-    footer a {
-      color: #a7f3d0;
-      text-decoration: none;
-    }
+    footer a { color: #a7f3d0; text-decoration: none; }
 
     @media (max-width: 600px) {
       header h1 { font-size: 2rem; }
@@ -205,7 +187,7 @@
 
   <section>
     <h2>Contexto y Motivación</h2>
-    <p class="subtitle">Nuestro proyecto abordó la contaminación del suelo y el agua en el campus del bachillerato 18 para mejorar las condiciones naturales en la localidad </p>
+    <p class="subtitle">Nuestro proyecto abordó la contaminación del suelo y el agua</p>
     
     <div class="card" id="contexto-card">
       <p>Esta problemática se considera relevante debido a su impacto directo sobre la salud ambiental de la comunidad y de la comunidad estudiantil. Aunque en un inicio se discutieron otros temas, como la inseguridad y la gran cantidad de carros en la localidad, se eligió el tema de la contaminación del agua y del suelo debido a su carácter urgente y su relación directa con el entorno inmediato del Bachillerato No. 18.</p>
@@ -215,30 +197,25 @@
       </div>
 
       <button id="leer-mas-btn" class="read-more-btn">
-        Leer más
-        <i style="font-style: normal;">▼</i> 
+        Leer más <i style="font-style: normal;">▼</i> 
       </button>
-
     </div>
   </section>
 
   <section>
     <h2>Objetivos del Proyecto</h2>
     <p class="subtitle">Ejes estratégicos de nuestra intervención</p>
-    
     <div class="features-grid">
       <div class="feature-card">
         <span class="feature-icon">💧</span>
         <span class="feature-title">Restauración Hídrica</span>
         <p class="feature-desc">Mitigar la contaminación directa en el suelo para proteger la integridad de los mantos acuíferos subterráneos de la zona.</p>
       </div>
-
       <div class="feature-card">
         <span class="feature-icon">📢</span>
         <span class="feature-title">Cultura Ambiental</span>
         <p class="feature-desc">Fomentar un cambio de paradigma en la comunidad estudiantil mediante estrategias de educación y sensibilización ecológica.</p>
       </div>
-
       <div class="feature-card">
         <span class="feature-icon">♻️</span>
         <span class="feature-title">Gestión de Residuos</span>
@@ -263,9 +240,59 @@
   <section>
     <h2>Galería de Evidencias</h2>
     <p class="subtitle">Lugares abordados y registro visual</p>
-     
     <div class="gallery-grid" id="contenedor-galeria"></div>
-     
+  </section>
+
+  <section>
+    <h2>Colaboradores</h2>
+    <p class="subtitle">Este proyecto fue posible gracias al seguimiento y apoyo de:</p>
+    
+    <div class="team-grid">
+        
+        <div class="team-card">
+            <img src="Directora.jpg" alt="Directora" class="team-img">
+            <div class="team-info">
+                <span class="team-name">Lic. Nombre Apellido</span> <span class="team-role">Directora del Plantel</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="Maestrofernando.jpg" alt="Maestro Fernando" class="team-img">
+            <div class="team-info">
+                <span class="team-name">Prof. Fernando</span> <span class="team-role">Docente Asesor</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="Maestramiriam.jpg" alt="Maestra Miriam" class="team-img">
+            <div class="team-info">
+                <span class="team-name">Prof. Miriam</span> <span class="team-role">Apoyo Académico</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="MaestraNadia.jpg" alt="Maestra Nadia" class="team-img">
+            <div class="team-info">
+                <span class="team-name">Prof. Nadia</span> <span class="team-role">Apoyo Académico</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="Delegado.jpeg" alt="Delegado" class="team-img">
+            <div class="team-info">
+                <span class="team-name">Prueba</span> <span class="team-role">Autoridad Local</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Colaborador" class="team-img" style="padding: 20px; box-sizing: border-box; opacity: 0.5;">
+            <div class="team-info">
+                <span class="team-name">Nombre Pendiente</span>
+                <span class="team-role">Rol Pendiente</span>
+            </div>
+        </div>
+
+    </div>
   </section>
 
   <footer>
@@ -274,36 +301,27 @@
   </footer>
 
   <script>
-    // --- FUNCIONALIDAD "LEER MÁS" Y BRILLITOS ---
+    // --- LÓGICA LEER MÁS ---
     const leerMasBtn = document.getElementById('leer-mas-btn');
     const masTextoDiv = document.getElementById('mas-texto');
     const contextoCard = document.getElementById('contexto-card');
-    const iconoFlecha = leerMasBtn.querySelector('i');
 
     leerMasBtn.addEventListener('click', function() {
-        // 1. Alternar la visibilidad del texto oculto
         if (masTextoDiv.style.display === "block") {
             masTextoDiv.style.display = "none";
-            leerMasBtn.childNodes[0].nodeValue = "Leer más "; // Cambia el texto del botón
+            leerMasBtn.childNodes[0].nodeValue = "Leer más ";
             leerMasBtn.classList.remove('open');
         } else {
             masTextoDiv.style.display = "block";
-            leerMasBtn.childNodes[0].nodeValue = "Leer menos "; // Cambia el texto del botón
+            leerMasBtn.childNodes[0].nodeValue = "Leer menos ";
             leerMasBtn.classList.add('open');
-
-            // 2. Activar la animación de brillitos
-            // Primero removemos la clase por si ya estaba activa, para reiniciarla
             contextoCard.classList.remove('sparkle-effect');
-            // Forzamos un "reflow" (reinicio) del navegador para que detecte el cambio
             void contextoCard.offsetWidth; 
-            // Agregamos la clase que tiene la animación
             contextoCard.classList.add('sparkle-effect');
         }
     });
 
-
-    // --- CÓDIGO DE LA GALERÍA (EXISTENTE) ---
-    // Lista exacta de tus archivos en GitHub
+    // --- LÓGICA GALERÍA ---
     const misFotos = [
       "Fototransversal1.jpg",
       "Fototransversal2.jpg",
@@ -320,13 +338,11 @@
     const contenedor = document.getElementById('contenedor-galeria');
 
     misFotos.forEach(nombreFoto => {
-      // Crea el HTML para cada foto
       const htmlTarjeta = `
         <div class="gallery-item">
           <img src="${nombreFoto}" alt="Evidencia del proyecto">
         </div>
       `;
-      // Lo inserta en la página
       contenedor.innerHTML += htmlTarjeta;
     });
   </script>
