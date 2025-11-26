@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GESTIÓN 9-05-2025 | Conservación Ambiental</title>
   <style>
+    /* --- ESTILOS GENERALES --- */
     body {
       font-family: "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
       background: #f9fafb;
       color: #111827;
+      scroll-behavior: smooth; /* Esto hace que baje suavemente */
     }
     header {
       text-align: center;
@@ -59,6 +61,35 @@
       color: #a7f3d0;
       text-decoration: none;
     }
+
+    /* --- ESTILOS NUEVOS PARA LA GALERÍA --- */
+    .gallery-grid {
+      display: grid;
+      /* Esto hace que las columnas se ajusten solas */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      background: #fff;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px; /* Altura fija para que todas se vean parejas */
+      object-fit: cover; /* Recorta la imagen para que no se deforme */
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    }
+
     @media (max-width: 600px) {
       header h1 { font-size: 2rem; }
       section { padding: 40px 15px; }
@@ -104,9 +135,44 @@
     </div>
   </section>
 
+  <section>
+    <h2>Galería de Evidencias</h2>
+    <p class="subtitle">Registro visual de las actividades y transformaciones logradas</p>
+    
+    <div class="gallery-grid" id="contenedor-galeria"></div>
+    
+  </section>
+
   <footer>
     <p>Proyecto <strong>GESTIÓN 9-05-2025</strong> — Bachillerato No. 18</p>
     <p>Desarrollado unicamente con fines de presentación.</p>
   </footer>
+
+  <script>
+    // Lista exacta de tus archivos en GitHub
+    const misFotos = [
+      "Fototransversal1.jpg",
+      "Fototransversal2.jpg",
+      "Fototransversal3.jpg",
+      "Fototransversal4.jpg",
+      "Fototransversal5.jpg",
+      "Fototransversal6.jpg",
+      "fototransversal7.jpg" 
+    ];
+
+    const contenedor = document.getElementById('contenedor-galeria');
+
+    misFotos.forEach(nombreFoto => {
+      // Crea el HTML para cada foto
+      const htmlTarjeta = `
+        <div class="gallery-item">
+          <img src="${nombreFoto}" alt="Evidencia del proyecto">
+        </div>
+      `;
+      // Lo inserta en la página
+      contenedor.innerHTML += htmlTarjeta;
+    });
+  </script>
+
 </body>
 </html>
