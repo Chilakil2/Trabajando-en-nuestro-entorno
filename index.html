@@ -55,7 +55,65 @@
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin-bottom: 25px;
+      /* Necesario para la animación de brillos */
+      position: relative;
+      border: 2px solid transparent; /* Borde invisible inicial */
+      transition: all 0.3s ease;
     }
+
+    /* --- NUEVOS ESTILOS: LEER MÁS Y BRILLITOS --- */
+
+    /* Clase para ocultar el contenido extra */
+    .hidden-content {
+        display: none;
+    }
+
+    /* Estilo del botón "Leer más" */
+    .read-more-btn {
+        background: none;
+        border: none;
+        color: #065f46;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px 0;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+    .read-more-btn:hover {
+        color: #59ef84;
+    }
+    .read-more-btn i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+    /* Rotar la flechita cuando está abierto */
+    .read-more-btn.open i {
+        transform: rotate(180deg);
+    }
+
+    /* Animación de "Brillitos" (Sparkles) */
+    @keyframes sparkle-animation {
+        0% {
+            box-shadow: 0 0 5px gold, 0 0 10px #59ef84;
+            border-color: gold;
+        }
+        50% {
+            box-shadow: 0 0 20px gold, 0 0 30px #59ef84, 0 0 40px #1057b0;
+            border-color: #59ef84;
+        }
+        100% {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-color: transparent;
+        }
+    }
+
+    /* Clase que activa la animación */
+    .sparkle-effect {
+        animation: sparkle-animation 1.5s ease-in-out;
+    }
+
 
     /* --- ESTILOS NUEVOS: TARJETAS DE OBJETIVOS (VISUALES) --- */
     .features-grid {
@@ -148,8 +206,19 @@
   <section>
     <h2>Contexto y Motivación</h2>
     <p class="subtitle">Nuestro proyecto abordó la contaminación del suelo y el agua en el campus del bachillerato 18 para mejorar las condiciones naturales en la localidad </p>
-    <div class="card">
-      <p>Esta problemática se considera relevante debido a su impacto directo sobre la salud ambiental de la comunidad y de la comunidad estudiantil. Aunque en un inicio se discutieron otros temas, como la inseguridad y la gran cantidad de carros en la localidad, se eligió el tema de la contaminación del agua y del suelo debido a su carácter urgente y su relación directa con el entorno inmediato del Bachillerato No. 18. La inseguridad, aunque importante, no afecta de manera inmediata al ambiente físico y la salud de los estudiantes. Por otro lado, la gran cantidad de carros en la localidad evidentemente contribuye al tráfico y a la contaminación del aire, pero no tiene un impacto directo sobre los cuerpos de agua y el suelo del plantel. En contraste, la acumulación de desechos sólidos y la contaminación de los cuerpos de agua cercanos al plantel tiene un efecto negativo en la biodiversidad local, puede generar enfermedades entre los estudiantes y comprometer la calidad de vida en la comunidad educativa..</p>
+    
+    <div class="card" id="contexto-card">
+      <p>Esta problemática se considera relevante debido a su impacto directo sobre la salud ambiental de la comunidad y de la comunidad estudiantil. Aunque en un inicio se discutieron otros temas, como la inseguridad y la gran cantidad de carros en la localidad, se eligió el tema de la contaminación del agua y del suelo debido a su carácter urgente y su relación directa con el entorno inmediato del Bachillerato No. 18.</p>
+      
+      <div id="mas-texto" class="hidden-content">
+        <p>La inseguridad, aunque importante, no afecta de manera inmediata al ambiente físico y la salud de los estudiantes. Por otro lado, la gran cantidad de carros en la localidad evidentemente contribuye al tráfico y a la contaminación del aire, pero no tiene un impacto directo sobre los cuerpos de agua y el suelo del plantel. En contraste, la acumulación de desechos sólidos y la contaminación de los cuerpos de agua cercanos al plantel tiene un efecto negativo en la biodiversidad local, puede generar enfermedades entre los estudiantes y comprometer la calidad de vida en la comunidad educativa.</p>
+      </div>
+
+      <button id="leer-mas-btn" class="read-more-btn">
+        Leer más
+        <i style="font-style: normal;">▼</i> 
+      </button>
+
     </div>
   </section>
 
@@ -205,6 +274,35 @@
   </footer>
 
   <script>
+    // --- FUNCIONALIDAD "LEER MÁS" Y BRILLITOS ---
+    const leerMasBtn = document.getElementById('leer-mas-btn');
+    const masTextoDiv = document.getElementById('mas-texto');
+    const contextoCard = document.getElementById('contexto-card');
+    const iconoFlecha = leerMasBtn.querySelector('i');
+
+    leerMasBtn.addEventListener('click', function() {
+        // 1. Alternar la visibilidad del texto oculto
+        if (masTextoDiv.style.display === "block") {
+            masTextoDiv.style.display = "none";
+            leerMasBtn.childNodes[0].nodeValue = "Leer más "; // Cambia el texto del botón
+            leerMasBtn.classList.remove('open');
+        } else {
+            masTextoDiv.style.display = "block";
+            leerMasBtn.childNodes[0].nodeValue = "Leer menos "; // Cambia el texto del botón
+            leerMasBtn.classList.add('open');
+
+            // 2. Activar la animación de brillitos
+            // Primero removemos la clase por si ya estaba activa, para reiniciarla
+            contextoCard.classList.remove('sparkle-effect');
+            // Forzamos un "reflow" (reinicio) del navegador para que detecte el cambio
+            void contextoCard.offsetWidth; 
+            // Agregamos la clase que tiene la animación
+            contextoCard.classList.add('sparkle-effect');
+        }
+    });
+
+
+    // --- CÓDIGO DE LA GALERÍA (EXISTENTE) ---
     // Lista exacta de tus archivos en GitHub
     const misFotos = [
       "Fototransversal1.jpg",
