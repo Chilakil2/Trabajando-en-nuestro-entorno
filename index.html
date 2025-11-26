@@ -12,7 +12,7 @@
       padding: 0;
       background: #f9fafb;
       color: #111827;
-      scroll-behavior: smooth; /* Esto hace que baje suavemente */
+      scroll-behavior: smooth;
     }
     header {
       text-align: center;
@@ -44,6 +44,8 @@
       color: #6b7280;
       margin-bottom: 40px;
     }
+    
+    /* Estilo para tarjetas normales (Contexto y Resultados) */
     .card {
       background: white;
       border-radius: 12px;
@@ -51,21 +53,47 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin-bottom: 25px;
     }
-    footer {
-      background: #065f46;
-      color: white;
-      text-align: center;
-      padding: 20px;
+
+    /* --- ESTILOS NUEVOS: TARJETAS DE OBJETIVOS (VISUALES) --- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    footer a {
-      color: #a7f3d0;
-      text-decoration: none;
+    .feature-card {
+      background: #f0fdf4; /* Fondo verde muy clarito */
+      border: 1px solid #bbf7d0; /* Borde verde suave */
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px); /* Se levanta al pasar el mouse */
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      background: #dcfce7; /* Se oscurece un poquito al tocar */
+    }
+    .feature-icon {
+      font-size: 3.5rem; /* Tamaño del emoji */
+      margin-bottom: 15px;
+      display: block;
+    }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #166534; /* Texto verde oscuro */
+      margin-bottom: 10px;
+      display: block;
+    }
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.5;
     }
 
-    /* --- ESTILOS NUEVOS PARA LA GALERÍA --- */
+    /* --- ESTILOS DE LA GALERÍA --- */
     .gallery-grid {
       display: grid;
-      /* Esto hace que las columnas se ajusten solas */
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
       padding: 10px;
@@ -80,14 +108,25 @@
 
     .gallery-item img {
       width: 100%;
-      height: 200px; /* Altura fija para que todas se vean parejas */
-      object-fit: cover; /* Recorta la imagen para que no se deforme */
+      height: 200px;
+      object-fit: cover;
       display: block;
       transition: transform 0.3s ease;
     }
 
     .gallery-item img:hover {
-      transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #065f46;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #a7f3d0;
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
@@ -107,41 +146,54 @@
     <h2>Contexto y Motivación</h2>
     <p class="subtitle">Nuestro proyecto abordó la contaminación del suelo y el agua en el campus del bachillerato 18 para mejorar las condiciones naturales en la localidad </p>
     <div class="card">
-      <p>Este proyecto surgió ante la necesidad urgente de abordar la degradación ambiental en el Bachillerato No. 18 y su comunidad. Se identificó que debajo del plantel existe algo llamado "mantos acuiferos" y a partir de ese conocimiento se realizarón distintas estrategias para combatir las problematicas</p>
+      <p>Este proyecto surgió ante la necesidad urgente de abordar la degradación ambiental en el Bachillerato No. 18 y su comunidad. Se identificó que debajo del plantel existe algo llamado "mantos acuíferos" y a partir de ese conocimiento se realizaron distintas estrategias para combatir las problemáticas.</p>
     </div>
   </section>
 
   <section>
     <h2>Objetivos del Proyecto</h2>
-    <p class="subtitle">Metas específicas</p>
-    <div class="card">
-      <ul>
-        <li>Reducir la contaminación del suelo y del agua en nuestra comunidad.</li>
-        <li>Fomentar la educación ambiental entre los estudiantes y vecinos.</li>
-        <li>Implementar acciones prácticas como jornadas de limpieza y reciclaje.</li>
-      </ul>
+    <p class="subtitle">Ejes estratégicos de nuestra intervención</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">💧</span>
+        <span class="feature-title">Restauración Hídrica</span>
+        <p class="feature-desc">Mitigar la contaminación directa en el suelo para proteger la integridad de los mantos acuíferos subterráneos de la zona.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📢</span>
+        <span class="feature-title">Cultura Ambiental</span>
+        <p class="feature-desc">Fomentar un cambio de paradigma en la comunidad estudiantil mediante estrategias de educación y sensibilización ecológica.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">♻️</span>
+        <span class="feature-title">Gestión de Residuos</span>
+        <p class="feature-desc">Implementar infraestructura y jornadas prácticas para asegurar el correcto manejo, recolección y reciclaje de desechos.</p>
+      </div>
     </div>
   </section>
 
   <section>
     <h2>Resultados Alcanzados</h2>
-    <p class="subtitle">Impacto medible</p>
+    <p class="subtitle">Impacto medible y verificable</p>
     <div class="card">
       <ul>
-        <li>Recolección de mas de 10 kg de hojarasca y contaminantes PET.</li>
-        <li>Concientización de mas de 80 estudiantes con encuestas, campañas y formularios.</li>
+        <li>Recolección de más de 10 kg de hojarasca y contaminantes PET.</li>
+        <li>Concientización de más de 80 estudiantes con encuestas, campañas y formularios.</li>
         <li>Mayor conciencia ecológica reflejada en encuestas comunitarias.</li>
-        <li>Colocación 5 contenedores de basura para mitigar la contaminación por residuos.</li>
+        <li>Colocación de 5 contenedores de basura para mitigar la contaminación por residuos.</li>
       </ul>
     </div>
   </section>
 
   <section>
     <h2>Galería de Evidencias</h2>
-    <p class="subtitle">Lugares abordados y evidencias de trabajo</p>
-    
+    <p class="subtitle">Lugares abordados y registro visual</p>
+     
     <div class="gallery-grid" id="contenedor-galeria"></div>
-    
+     
   </section>
 
   <footer>
